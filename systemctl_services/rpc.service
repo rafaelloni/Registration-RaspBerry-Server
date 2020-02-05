@@ -1,0 +1,14 @@
+[Unit]
+Description=RPC Camera.
+After=network-online.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/bin/python3 /usr/bin/RaspCamServer.py
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

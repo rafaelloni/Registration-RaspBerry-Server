@@ -1,0 +1,14 @@
+[Unit]
+Description=Chrome open streamlit.
+After=network-online.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/bin/bash /usr/bin/testechrome.sh         
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
